@@ -1,0 +1,25 @@
+div {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
+
+.top {
+  background-color: red;
+  color: black;
+  position: relative;
+  left: 400px;
+}
+
+.mid {
+  background-color: blue;
+  color: black;
+  position: absolute;
+  left: 10px
+}
+
+.bot {
+  background-color: yellow;
+  color: black;
+  position: absolute;
+}

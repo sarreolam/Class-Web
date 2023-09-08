@@ -1,0 +1,23 @@
+div {
+  width: 200px;
+  height: 200px;
+}
+
+.top {
+  background-color: blue;
+  color: black;
+  border: solid black 10px;
+  padding: 20px;
+}
+.mid {
+  background-color: red;
+  color: black;
+  border: solid black 20px;
+  margin-left: 260px;
+}
+.bot {
+  background-color: yellow;
+  color: black;
+  border: solid black 10px;
+  margin-left: 500px;
+}
