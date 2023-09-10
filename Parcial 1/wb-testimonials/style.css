@@ -1,4 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&display=swap');
+
 body {
     height: auto;
     margin: auto;
+    font-family: Barlow Semi Condensed;
   }
+
+img{
+  border-radius: 100%;
+  width: 40px;
+  border: 2px solid #a17ed0;
+  float: left;
+}
+.top-div{
+  width: 1440px;
+  height: 900px;
+  /* margin: auto; */
+  background-color: #edf2f8;  
+}
+
+.top-two-profile {
+  /* height: 280px; */
+  margin: auto;
+  width: 820px;
+  height: 280px;
+  margin-bottom: 26px;
+  /* margin-right: 30px; */
+}
+.top-two-profile > div {
+  height: 230px;
+  padding: 30px;
+  padding-top: 20px;
+  /* margin: auto; */
+  border-radius: 10px;
+  display: inline-block;
+
+}
+.daniel-div{
+  background-color: #733fc8;
+  width: 476px;
+  /* position: relative; */
+  color: white;
+}
+.daniel-text{
+  position: relative;
+  top: -120px;
+}
+.daniel-text p{
+  font-size: 14px;
+}
+.daniel-text h2{
+  font-weight: 900;
+}
+
+
+
+.jonathan-div{
+  background-color: #48556a;
+  width: 194px;
+  position: absolute;
+  margin-left: 30px;
+  color: white;
+}
+.jonathan-text{
+  position: relative;
+  /* top: 11px; */
+}
+.jonathan-text p{
+  font-size: 14px;;
+}
+
+
+.names-div div{
+  margin-left: 70px;
+}
+.quotes{
+  border-radius: 0;
+  border: 0;
+  float: none;
+  width: 120px;
+  position: relative;
+  left: 270px;
+  top: -59px;
+}
+
+
+
+
+.bottom-two-profile{
+  margin: auto;
+  width: 820px;
+  height: 266px;
+}
+.bottom-two-profile > div {
+  height: 216px;
+  padding: 30px;
+  padding-top: 20px;
+  /* margin: auto; */
+  border-radius: 10px;
+  display: inline-block;
+}
+.jeanette-div{
+  background-color: white;
+  width: 195px;
+  position: relative;
+  top: -23px;
+  color: #4c5359;
+}
+.jeanette-text p {
+  font-size: 14px;  
+}
+
+.patrick-div{
+  background-color: #19212e;
+  width: 480px;
+  color: white;
+  margin-left: 21.5px;
+}
+.patrick-text p {
+  font-size: 14px;
+}
+
+
+
+.kira-div{
+  padding: 30px;
+  padding-top: 20px;
+  margin: auto;
+  width: 190px;
+  height: 522px;
+  /* border: 10px solid; */
+  color: #474d59;
+  background-color: white;
+  border-radius: 10px;
+}
+.kira-div p{
+  font-size: 14px;
+}
+.side-profile{
+  display: inline-block;
+  margin: 15px;
+}
+
+.all-profiles{
+  position: relative;
+  width: 1140px;
+  top: 149px;
+  margin: auto;
+}
