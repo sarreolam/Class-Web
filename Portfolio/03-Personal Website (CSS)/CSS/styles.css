@@ -1,0 +1,21 @@
+h1, 
+h2 {
+  color: orange;
+}
+
+tbody{
+  background-color: grey;
+  color: azure
+}
+
+select{
+  background-color: aquamarine;
+}
+
+.header {
+  background-color: black;
+  color: white
+}
+ .header h1 {
+  color: aqua
+ }
