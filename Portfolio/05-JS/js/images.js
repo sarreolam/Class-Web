@@ -8,7 +8,7 @@ var myGamePiece;
 
 // Canvas and game initialization
 function startGame() {
-  myGamePiece = new component(30, 30, "../images/smiley.gif", 10, 120, "image");
+  myGamePiece = new component(30, 30, "./images/smiley.gif", 10, 120, "image");
   myGameArea.start();
 }
 
@@ -61,10 +61,12 @@ function component(width, height, color, x, y, type) {
     this.x += this.speedX;
     this.y += this.speedY;
     if (this.type == "image") {
-      if (this.x >= canvasWidth - this.width / 2 || this.x <= 0) {
+      if (this.x >= canvasWidth - this.width - 1 / 2 || this.x <= 0) {
+        myGamePiece.speedX = myGamePiece.speedX*-1;
         //TODO: make the image bounce back when reaching the edges
       }
-      if (this.y >= canvasHeight - this.height / 2 || this.y <= 0) {
+      if (this.y >= canvasHeight - this.height - 1/ 2 || this.y <= 0) {
+        myGamePiece.speedY = myGamePiece.speedY*-1;
         //TODO: make the image bounce back when reaching the edges
       }
     }
@@ -84,11 +86,13 @@ function moveup() {
 }
 
 function movedown() {
+  myGamePiece.speedY += 1;
   //TODO: implement the move down functionality
 }
 
 function moveleft() {
   //TODO: implement the move left functionality
+  myGamePiece.speedX -= 1;
 }
 
 function moveright() {

@@ -1,7 +1,7 @@
 var myGamePiece = new Array();
 var happySrc = "images/smiley.gif";
 var sadSrc = "images/angry.gif";
-var maxDist = 5;
+var maxDist = 30;
 
 var myGameArea = {
   timer: 0,
@@ -42,15 +42,35 @@ function flatlander(width, height, x, y, isHappy) {
     ctx.fillText(this.happyPoints, this.x, this.y + 5);
   };
   this.newPos = function (canvasWidth, canvasHeight) {
+    this.x=this.x+this.speedX
+    this.y=this.y+this.speedY
+    if(this.x+30>canvasWidth||this.x<0){
+      this.speedX = this.speedX*-1;
+    }
+    if(this.y+30>canvasHeight||this.y<0){
+      this.speedY = this.speedY*-1;
+    }
     // TODO: Update the x, y position using the this.speedX and this.speedY
     // values of the object. Make sure that when they reach an edge, they
     // bounce back.
   };
   this.moreHappy = function () {
+    this.happyPoints +=1
+    if(this.happyPoints>=0){
+      this.image.src= happySrc
+      this.isHappy=true
+    }
+
     // TODO: increase the happyPoints value and check if the isHappy flag
-    // needs to be updated along with the image being displayed
+    // needs to be updated along with the image being displayed 
   };
   this.lessHappy = function () {
+    // console.log(this.happyPoints)
+    this.happyPoints -=1
+    if(this.happyPoints<0){
+      this.image.src= sadSrc
+      this.isHappy=false
+    }
     // TODO: decrease the happyPoints value and check if the isHappy flag
     // needs to be updated along with the image being displayed
   };
@@ -63,15 +83,15 @@ function flatlander(width, height, x, y, isHappy) {
 
 function startGame() {
   // TODO: make sure to get all the values from the screen
-  var n = 1;
-  var m = 1;
+  var n = document.getElementById('num').value;
+  var m = document.getElementById('sad').value;
   if (parseInt(m) > parseInt(n)) {
     window.alert("Can not have more sad than individuals.");
     return;
   }
   var sad = 0;
   for (i = 0; i < n; i++) {
-    //var rand = Math.random() * 100;
+    // var rand = Math.random() * 100;
     // 30% of chance of getting an angry subject
     var nX = (Math.random() * 10000) % myGameArea.canvas.width;
     var nY = (Math.random() * 10000) % myGameArea.canvas.height;
@@ -83,18 +103,20 @@ function startGame() {
 
 function updateGameArea() {
   if (myGameArea.running) {
+
     myGameArea.clear();
+    var happy = 0;
+    var sad = 0;
     for (i = 0; i < myGamePiece.length; i++) {
       myGamePiece[i].newPos(myGameArea.canvas.width, myGameArea.canvas.height);
       myGamePiece[i].update();
     }
     var tmpFocus, d;
-    var happy = 0;
-    var sad = 0;
     for (i = 0; i < myGamePiece.length; i++) {
       tmpFocus = myGamePiece[i];
       for (j = i + 1; j < myGamePiece.length; j++) {
         d = tmpFocus.checkSurroundings(myGamePiece[j]);
+        // console.log(d)
         if (d < maxDist) {
           if (myGamePiece[j].isHappy) {
             tmpFocus.moreHappy();
@@ -105,6 +127,7 @@ function updateGameArea() {
       }
       if (tmpFocus.isHappy) {
         happy++;
+        console.log(happy)
       } else {
         sad++;
       }

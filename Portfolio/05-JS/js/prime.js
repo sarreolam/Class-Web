@@ -3,8 +3,9 @@
     all Prime Factors (if there are any) and display them.
 */
 
-var getPrimeFactors = function (n) {
+var getPrimeFactors = function () {
   "use strict";
+  var n = document.getElementById("num").value;
 
   function isPrime(n) {
     var i;
@@ -17,14 +18,25 @@ var getPrimeFactors = function (n) {
     return true;
   }
 
-  var i,
-    sequence = [];
+  var i=2, sequence = []; 
 
   //TODO: Check which numbers are factors of n and also check if
   // that number also happens to be a prime
 
-  return sequence;
+  if(isPrime(n)){
+    sequence= "El numero es primo"
+  }else{
+    while (n>1){
+      while(n%i===0){
+        n=n/i
+        sequence.push(i)
+      }
+      i++
+    }
+  }
+
+  console.log(sequence);
 };
 
 // the prime factors for this number are: [ 2, 3, 5, 7, 11, 13 ]
-console.log(getPrimeFactors(30030));
+// console.log(getPrimeFactors(30030));
