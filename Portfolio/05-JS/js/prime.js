@@ -35,7 +35,7 @@ var getPrimeFactors = function () {
     }
   }
 
-  console.log(sequence);
+  document.getElementById("pf").textContent=sequence
 };
 
 // the prime factors for this number are: [ 2, 3, 5, 7, 11, 13 ]
