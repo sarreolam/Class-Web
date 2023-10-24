@@ -1,0 +1,13 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    background-color: beige !important;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}

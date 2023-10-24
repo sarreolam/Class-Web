@@ -1,0 +1,39 @@
+body{
+  background-color: rgb(143, 145, 223);
+  font-family: 'Merriweather', serif
+}
+
+h1{
+  font-family: 'sacramento', cursive;
+  color: orange;
+  font-size: 5.5rem;
+  margin: 50px;
+}
+h2{
+  font-family: 'montserrat', sans-serif;
+  font-size: 2.5rem;
+  padding-bottom: 10px;
+  color: aqua;
+}
+h3{
+  font-family: 'montserrat', sans-serif;
+  color: green;
+}
+
+hr{
+  border: dotted #EAF6F6 6px;
+  border-bottom: 0;
+  width: 4vw;
+  margin: 0 100px
+}
+table, th, td{
+  border: solid black 1px;
+}
+a{
+  text-decoration: 0;
+  font-weight:bold;
+  color: white;
+}
+a:hover{
+  color: green;
+}

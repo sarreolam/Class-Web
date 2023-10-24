@@ -1,0 +1,30 @@
+<%- include('partials/header');%>
+  <img src="../images/StarLion.png" alt="lion brewery" />
+  <h1>Welcome to my landing page</h1>
+  <%if (locals.name){%>
+    <h2>Hi <%=name%></h2>
+  <%}%>
+
+  <form action="/add_content" method="post">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" />
+    <label for="content">Content</label>
+    <input type="text" name="content" id="content" />
+    <input type="submit" />
+  </form>
+
+  <% posts.forEach((post, index)=>{%>
+  <div>
+    <hr/>
+    <h1><%=post.title%></h1>
+    <p><%=post.content.substr(0,100)%>
+    <%if(post.content.length > 100){%>
+      ... 
+        <a href='/home/<%=index%>'>Read more</a>
+        <%}%>
+          
+    </p>
+  </div>
+  <%});%>
+
+<%- include('partials/footer'); %>
