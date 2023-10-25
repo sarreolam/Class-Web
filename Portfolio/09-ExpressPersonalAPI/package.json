@@ -1,0 +1,16 @@
+{
+  "name": "09-expresspersonalapi",
+  "version": "1.0.0",
+  "description": "This project will help us to test the responses we can get out of our express server, including some error handling processes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
