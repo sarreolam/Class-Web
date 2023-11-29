@@ -1,0 +1,47 @@
+<%- include('partials/header')%>
+  <img src="../images/StarLion.png" alt="lion brewery" />
+  <h1>Welcome to my F1 DB</h1>
+  <form action="/driver" method="post">
+      <h2>Driver information</h2>
+      <input type="text" name="num" id="num" placeholder="Number" />
+      <input type="text" name="code" id="code" placeholder="Code" />
+      <input type="text" name="name" id="name" placeholder="Name" />
+      <input type="text" name="lname" id="lname" placeholder="Last name" />
+      <br />
+      <label for="dob">Date of birth: </label>
+      <input type="date" name="dob" id="dob" />
+      <label for="url">Biography URL: </label>
+      <input type="url" name="url" id="url" />
+      <br />
+      <label for="nation">Nationality: </label>
+      <select name="nation" id="nation">
+        <%countries.forEach((country)=>{%>
+          <option value="<%=country.code%>"><%=country.label%></option>
+        <%})%>
+      </select>
+      <label for="team">Team: </label>
+      <select name="team" id="team">
+          <option value="mercedes">Mercedes</option>
+          <option value="aston_martin">Aston Martin</option>
+          <option value="alpine">Alpine</option>
+          <option value="hass_f1">Hass F1 Team</option>
+          <option value="red_bull">Red Bull Racing</option>
+          <option value="alpha_tauri">Alpha Tauri</option>
+          <option value="alpha_romeo">Alpha Romeo</option>
+          <option value="ferrari">Ferrari</option>
+          <option value="williams">Williams</option>
+          <option value="mc_laren">McLaren</option>
+
+      </select>
+      <p> <input type="submit" /> </p>
+
+  </form>
+  <ul>
+    <%drivers.forEach((driver)=>{%>
+      <li>
+        <%= driver.forename%>
+        <%= driver.surname%>
+      </li>
+    <%})  %>
+  </ul>
+<%- include('partials/footer')%>
